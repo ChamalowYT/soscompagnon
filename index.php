@@ -10,7 +10,6 @@ header('Content-Type: text/html; charset=utf-8');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Security & Performance -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; upgrade-insecure-requests;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- Primary Meta Tags -->
@@ -73,11 +72,11 @@ header('Content-Type: text/html; charset=utf-8');
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Preload critical assets -->
-  <link rel="preload" href="/css/main.css" as="style">
-  <link rel="preload" href="/js/main.js" as="script">
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="css/main.css">
 
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
@@ -416,7 +415,7 @@ header('Content-Type: text/html; charset=utf-8');
 </button>
 
 <!-- JavaScript - Defer for performance -->
-<script defer src="/js/main.js"></script>
+<script defer src="js/main.js"></script>
 
 </body>
 </html>
