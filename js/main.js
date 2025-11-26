@@ -14,8 +14,6 @@ const SiteManager = {
     this.initCarousel();
     this.initBackToTop();
     this.initAnimations();
-    this.initPWA();
-    this.initServiceWorker();
   },
 
   // ===== PROMO BANNER =====
@@ -198,67 +196,6 @@ const SiteManager = {
     });
 
     elements.forEach(el => observer.observe(el));
-  },
-
-  // ===== PWA INSTALL =====
-  initPWA() {
-    const btn = document.getElementById('pwaInstallFab');
-    if (!btn) return;
-
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-    let deferredPrompt = null;
-
-    if (isStandalone) {
-      return;
-    }
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      btn.style.display = 'flex';
-    });
-
-    btn.addEventListener('click', async () => {
-      const ua = navigator.userAgent || '';
-      const isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
-
-      if (isIOS) {
-        this.showToast('📱 Pour installer sur iOS: Touchez le bouton Partager ⎋ puis "Sur l\'écran d\'accueil"', 'info');
-        return;
-      }
-
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const choice = await deferredPrompt.userChoice;
-        if (choice.outcome === 'accepted') {
-          btn.style.display = 'none';
-          this.showToast('✅ Application installée avec succès !', 'success');
-        }
-        deferredPrompt = null;
-      } else {
-        this.showToast('Pour installer: Menu ⋮ → "Installer l\'application"', 'info');
-      }
-    });
-
-    window.addEventListener('appinstalled', () => {
-      btn.style.display = 'none';
-      this.showToast('✅ Application installée !', 'success');
-    });
-  },
-
-  // ===== SERVICE WORKER =====
-  initServiceWorker() {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(reg => {
-            console.log('✅ Service Worker enregistré:', reg.scope);
-          })
-          .catch(err => {
-            console.error('❌ Erreur Service Worker:', err);
-          });
-      });
-    }
   },
 
   // ===== TOAST NOTIFICATIONS =====

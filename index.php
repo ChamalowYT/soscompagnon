@@ -39,32 +39,12 @@ header('Content-Type: text/html; charset=utf-8');
   <meta name="twitter:description" content="Service professionnel de recherche d'animaux perdus, affiches, enquêtes de voisinage et livraisons d'articles animaliers.">
   <meta name="twitter:image" content="https://soscompagnon.fr/img/twitter-card.jpg">
 
-  <!-- PWA Manifest & Icons -->
-  <link rel="manifest" href="/manifest.json">
+  <!-- Theme Color for Mobile -->
   <meta name="theme-color" content="#EF5D1C">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="SOS Compagnon">
-
-  <!-- iOS PWA Meta Tags -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="SOS Compagnon">
-
-  <!-- iOS Icons -->
-  <link rel="apple-touch-icon" href="/pwa/icons/icon-180.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="/pwa/icons/icon-57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/pwa/icons/icon-60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/pwa/icons/icon-72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/pwa/icons/icon-76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/pwa/icons/icon-114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/pwa/icons/icon-120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/pwa/icons/icon-144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/pwa/icons/icon-152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/pwa/icons/icon-180.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png">
-  <link rel="shortcut icon" href="/img/logo.png">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="shortcut icon" href="img/logo.png">
 
   <!-- Fonts - Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -407,12 +387,6 @@ header('Content-Type: text/html; charset=utf-8');
 
 <!-- BACK TO TOP BUTTON -->
 <button id="backToTop" class="back-to-top" aria-label="Retour en haut de la page">↑</button>
-
-<!-- PWA INSTALL BUTTON -->
-<button id="pwaInstallFab" class="pwa-fab" aria-label="Installer l'application">
-  <img src="/img/logo.png" alt="" aria-hidden="true">
-  <span>Installer l'app</span>
-</button>
 
 <!-- JavaScript - Defer for performance -->
 <script defer src="js/main.js"></script>
